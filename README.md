@@ -25,3 +25,15 @@
   |------------|-------------|--------------------|
   | Imperativo | Função | Iterator |
   | Reativo | Promise | Observable |
+
+- Diagrama de marble
+  <img src="assets\img\diagrama-marble-1.png" width="auto">
+
+  <img src="assets\img\diagrama-marble-2.png" width="auto">
+
+  <img src="assets\img\diagrama-marble-3.png" width="auto">
+
+- SwitchMap e Merge
+  <img src="assets\img\switchmap-e-merge-1.png" width="auto">
+
+  <img src="assets\img\switchmap-e-merge-2.png" width="auto">

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { map, pluck, tap } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
@@ -11,13 +11,17 @@ import { Acao, AcoesAPI } from './modelo/acoes';
 export class AcoesService {
   constructor(private httpClient: HttpClient) {}
 
-  getAcoes() {
-    return this.httpClient.get<AcoesAPI>(`${environment.API_URL}/acoes`).pipe(
-      pluck('payload'),
-      map((acoes) =>
-        acoes.sort((acaoA, acaoB) => this.ordenaPorCodigo(acaoA, acaoB))
-      )
-    );
+  getAcoes(valor?: string) {
+    const params = valor ? new HttpParams().append('valor', valor) : undefined;
+
+    return this.httpClient
+      .get<AcoesAPI>(`${environment.API_URL}/acoes`, { params })
+      .pipe(
+        pluck('payload'),
+        map((acoes) =>
+          acoes.sort((acaoA, acaoB) => this.ordenaPorCodigo(acaoA, acaoB))
+        )
+      );
   }
 
   private ordenaPorCodigo(acaoA: Acao, acaoB: Acao) {
