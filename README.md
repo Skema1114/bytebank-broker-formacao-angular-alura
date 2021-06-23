@@ -21,19 +21,22 @@
 ## Entendendo
 
 - Observable
-  | TIPO | VALOR ÚNICO | COLEÇÃO DE VALORES |
-  |------------|-------------|--------------------|
-  | Imperativo | Função | Iterator |
-  | Reativo | Promise | Observable |
+  <img src="assets\img\observable-1.png" width="auto">
 
 - Diagrama de marble
   <img src="assets\img\diagrama-marble-1.png" width="auto">
-
   <img src="assets\img\diagrama-marble-2.png" width="auto">
-
   <img src="assets\img\diagrama-marble-3.png" width="auto">
 
 - SwitchMap e Merge
   <img src="assets\img\switchmap-e-merge-1.png" width="auto">
-
   <img src="assets\img\switchmap-e-merge-2.png" width="auto">
+
+- Filter, DebounceTime e DistinctUntilChanged
+  <img src="assets\img\filter-debouncetime-e-distinctuntilchanged-1.png" width="auto">
+  <img src="assets\img\filter-debouncetime-e-distinctuntilchanged-2.png" width="auto">
+  <img src="assets\img\filter-debouncetime-e-distinctuntilchanged-3.png" width="auto">
+
+## Documentação
+
+- https://rxjs-dev.firebaseapp.com/guide/overview
