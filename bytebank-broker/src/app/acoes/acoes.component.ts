@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { Acoes } from '../acoes/modelo/acoes';
 import { AcoesService } from './acoes.service';
 
 @Component({
@@ -11,13 +10,9 @@ import { AcoesService } from './acoes.service';
 })
 export class AcoesComponent implements OnInit {
   acoesInput = new FormControl();
-  acoes: Acoes;
+  acoes$ = this.acoesService.getAcoes();
 
   constructor(private acoesService: AcoesService) {}
 
-  ngOnInit(): void {
-    this.acoesService.getAcoes().subscribe((retornoApi) => {
-      this.acoes = retornoApi.payload;
-    });
-  }
+  ngOnInit(): void {}
 }
